@@ -1,0 +1,22 @@
+{
+  "name": "devengine-premium",
+  "version": "1.0.0",
+  "description": "DevEngine Premium - A personal branding theme for Software Engineers",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "dev": "vite & browser-sync start --config bs-config.js",
+    "build": "vite build",
+    "lint:scss": "stylelint \"**/*.scss\" --fix",
+    "lint:php": "phpcs --standard=WordPress ."
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "sass": "^1.69.0",
+    "@wordpress/scripts": "^26.0.0",
+    "browser-sync": "^2.29.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.1.0",
+    "stylelint-order": "^6.0.3"
+  }
+}
+

@@ -1,0 +1,18 @@
+// Dark Theme Overrides
+// Applied when body has .theme-dark class
+.theme-dark {
+	--color-devengine-slate: #0f172a;
+	--color-devengine-teal: #2dd4bf;
+	--color-devengine-white: #f8fafc;
+	--color-devengine-muted: #64748b;
+
+	// Override any additional dark theme specific variables
+	--bg-primary: var(--color-devengine-slate);
+	--bg-secondary: rgba(15, 23, 42, 0.95);
+	--text-primary: var(--color-devengine-white);
+	--text-secondary: var(--color-devengine-muted);
+	--accent: var(--color-devengine-teal);
+	--border-color: rgba(255, 255, 255, 0.1);
+	--shadow-color: rgba(0, 0, 0, 0.3);
+}
+

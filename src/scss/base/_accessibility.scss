@@ -1,0 +1,82 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+// Skip to Content Link
+// Hidden by default, visible on focus for keyboard navigation
+.skip-to-content {
+	@include visually-hidden();
+
+	&:focus {
+		position: fixed;
+		top: $space-md;
+		left: $space-md;
+		z-index: $z-modal;
+		width: auto;
+		height: auto;
+		padding: $space-sm $space-md;
+		background-color: var(--color-devengine-teal);
+		color: var(--color-devengine-slate);
+		text-decoration: none;
+		border-radius: $space-sm;
+		font-weight: 600;
+		clip: auto;
+	}
+}
+
+// Focus Visible Ring Styles
+// Enhanced focus indicators for keyboard navigation
+*:focus-visible {
+	@include focus-ring();
+}
+
+// Remove focus outline for mouse users
+*:focus:not(:focus-visible) {
+	outline: none;
+}
+
+// Screen Reader Only Utility
+// Hides content visually but keeps it accessible to assistive technologies
+.sr-only {
+	@include visually-hidden();
+}
+
+// Screen Reader Only - Focusable
+// Same as sr-only but becomes visible on focus
+.sr-only-focusable {
+	@include visually-hidden();
+
+	&:focus {
+		position: static;
+		width: auto;
+		height: auto;
+		padding: inherit;
+		margin: inherit;
+		overflow: visible;
+		clip: auto;
+		white-space: normal;
+	}
+}
+
+// ARIA Landmark Roles
+// Ensure proper landmark roles are styled appropriately
+[role="banner"],
+[role="navigation"],
+[role="main"],
+[role="complementary"],
+[role="contentinfo"] {
+	// Landmark roles are semantic, no additional styles needed
+	// but ensure they're properly structured
+}
+
+// Reduced Motion Support
+@include reduced-motion() {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+

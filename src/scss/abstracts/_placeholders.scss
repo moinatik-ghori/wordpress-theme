@@ -1,0 +1,53 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Container Placeholder
+// Centers content with max-width
+%container {
+	width: 100%;
+	max-width: $wide-size;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $space-md;
+	padding-right: $space-md;
+}
+
+// Section Padding Placeholder
+// Consistent vertical spacing for sections
+%section-padding {
+	padding-top: $space-4xl;
+	padding-bottom: $space-4xl;
+
+	@include respond-to('md') {
+		padding-top: $space-4xl * 1.5;
+		padding-bottom: $space-4xl * 1.5;
+	}
+}
+
+// Card Base Placeholder
+// Base styles for card components
+%card-base {
+	background-color: var(--color-devengine-white);
+	border-radius: $space-sm;
+	padding: $space-lg;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+	transition: box-shadow $transition-base;
+
+	&:hover {
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	}
+}
+
+// Button Reset Placeholder
+// Removes default button styles
+%button-reset {
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+}
+

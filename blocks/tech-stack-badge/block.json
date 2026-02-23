@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "devengine/tech-stack-badge",
+	"version": "1.0.0",
+	"title": "Tech Stack Badge",
+	"category": "devengine",
+	"icon": "admin-tools",
+	"description": "Display a technology stack badge with optional icon",
+	"keywords": ["badge", "tech", "technology", "stack"],
+	"textdomain": "devengine",
+	"supports": {
+		"html": false,
+		"multiple": true,
+		"inserter": true
+	},
+	"attributes": {
+		"technology": {
+			"type": "string",
+			"default": "JavaScript"
+		},
+		"showIcon": {
+			"type": "boolean",
+			"default": true
+		},
+		"size": {
+			"type": "string",
+			"enum": ["sm", "md", "lg"],
+			"default": "md"
+		}
+	},
+	"editorScript": "file:./edit.js",
+	"render": "file:./render.php"
+}
+

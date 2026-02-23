@@ -1,0 +1,35 @@
+// DevEngine Premium - Main SCSS Entry Point
+// 7-1 Pattern Architecture
+// Using @use (not @import) for modern Sass module system
+
+// 1. Abstracts
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+@use 'abstracts/functions';
+@use 'abstracts/placeholders';
+
+// 2. Base
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/accessibility';
+
+// 3. Layout
+@use 'layout/grid';
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/sidebar';
+
+// 4. Components
+@use 'components/button';
+@use 'components/card';
+@use 'components/badge';
+@use 'components/navigation';
+@use 'components/progress-bar';
+@use 'components/cursor';
+@use 'components/timeline';
+@use 'components/code-block';
+
+// 5. Themes
+@use 'themes/dark';
+@use 'themes/light';
+

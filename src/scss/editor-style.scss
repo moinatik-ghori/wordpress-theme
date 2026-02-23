@@ -1,0 +1,20 @@
+/**
+ * Editor Styles
+ *
+ * Styles for the Gutenberg block editor.
+ *
+ * @package DevEngine_Premium
+ * @since 1.0.0
+ */
+
+@use 'abstracts/variables';
+@use 'base/typography';
+@use 'components/code-block';
+
+// Editor-specific overrides
+.editor-styles-wrapper {
+	font-family: var(--font-inter);
+	color: var(--color-devengine-white);
+	background-color: var(--color-devengine-slate);
+}
+

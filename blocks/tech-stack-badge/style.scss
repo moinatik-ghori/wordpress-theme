@@ -1,0 +1,57 @@
+@use '../../src/scss/abstracts/variables' as *;
+@use '../../src/scss/components/badge' as *;
+
+// Tech Stack Badge Block Styles
+// Extends .badge--tech from components
+
+.badge--tech {
+	// Size modifiers
+	&.badge--sm {
+		padding: $space-xs $space-sm;
+		font-size: $text-sm;
+	}
+
+	&.badge--md {
+		padding: $space-sm $space-md;
+		font-size: $text-sm;
+	}
+
+	&.badge--lg {
+		padding: $space-md $space-lg;
+		font-size: $text-base;
+	}
+
+	// Icon spacing
+	.badge__icon {
+		display: inline-flex;
+		align-items: center;
+		margin-right: $space-xs;
+		vertical-align: middle;
+
+		svg {
+			width: 16px;
+			height: 16px;
+			display: block;
+		}
+	}
+
+	.badge--sm & {
+		.badge__icon svg {
+			width: 12px;
+			height: 12px;
+		}
+	}
+
+	.badge--lg & {
+		.badge__icon svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	.badge__text {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+

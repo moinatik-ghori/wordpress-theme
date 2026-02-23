@@ -1,0 +1,101 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+// Footer Layout - Three Column Grid
+.site-footer {
+	background-color: rgba(15, 23, 42, 0.95);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	padding-top: $space-4xl;
+	padding-bottom: $space-xl;
+	margin-top: $space-4xl;
+}
+
+.footer-container {
+	@extend %container;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: $space-2xl;
+
+	@include respond-to('md') {
+		grid-template-columns: repeat(3, 1fr);
+		gap: $space-xl;
+	}
+}
+
+.footer-widget {
+	&__title {
+		font-size: $text-base;
+		font-weight: 600;
+		margin-bottom: $space-md;
+		color: var(--color-devengine-white);
+	}
+
+	&__content {
+		font-size: $text-sm;
+		color: var(--color-devengine-muted);
+		line-height: 1.6;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+
+		li {
+			margin-bottom: $space-sm;
+
+			a {
+				color: var(--color-devengine-muted);
+				transition: color $transition-fast;
+
+				&:hover {
+					color: var(--color-devengine-teal);
+				}
+			}
+		}
+	}
+}
+
+.footer-bottom {
+	margin-top: $space-2xl;
+	padding-top: $space-xl;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	text-align: center;
+	font-size: $text-sm;
+	color: var(--color-devengine-muted);
+
+	@include respond-to('md') {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		text-align: left;
+	}
+}
+
+.footer-copyright {
+	margin: 0;
+}
+
+.footer-links {
+	display: flex;
+	gap: $space-lg;
+	justify-content: center;
+	margin-top: $space-md;
+
+	@include respond-to('md') {
+		margin-top: 0;
+	}
+
+	a {
+		color: var(--color-devengine-muted);
+		transition: color $transition-fast;
+
+		&:hover {
+			color: var(--color-devengine-teal);
+		}
+	}
+}
+

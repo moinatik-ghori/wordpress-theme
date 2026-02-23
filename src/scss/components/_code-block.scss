@@ -1,0 +1,126 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Prism.js Theme Overrides
+// Matching Deep Tech palette (slate background, teal accents)
+.code-block,
+pre[class*="language-"],
+code[class*="language-"] {
+	background-color: rgba(15, 23, 42, 0.95) !important;
+	color: var(--color-devengine-white) !important;
+	border: 1px solid rgba(45, 212, 191, 0.2);
+	border-radius: $space-sm;
+	padding: $space-lg;
+	margin-bottom: $space-md;
+	overflow-x: auto;
+	font-family: 'Courier New', Courier, 'Monaco', 'Menlo', monospace;
+	font-size: $text-sm;
+	line-height: 1.6;
+	tab-size: 2;
+}
+
+// Syntax Highlighting Colors
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--color-devengine-muted);
+	font-style: italic;
+}
+
+.token.punctuation {
+	color: var(--color-devengine-white);
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: var(--color-devengine-teal);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a78bfa; // Purple for strings
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: var(--color-devengine-teal);
+	background: transparent;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: var(--color-devengine-teal);
+	font-weight: 600;
+}
+
+.token.function,
+.token.class-name {
+	color: #fbbf24; // Amber for functions
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #f87171; // Red for regex/important
+}
+
+// Line Numbers
+.line-numbers .line-numbers-rows {
+	border-right: 1px solid rgba(45, 212, 191, 0.2);
+	padding-right: $space-md;
+	margin-right: $space-md;
+}
+
+.line-numbers-rows > span:before {
+	color: var(--color-devengine-muted);
+}
+
+// Copy Button
+.code-block-wrapper {
+	position: relative;
+
+	.code-copy-button {
+		position: absolute;
+		top: $space-sm;
+		right: $space-sm;
+		padding: $space-xs $space-sm;
+		background-color: rgba(15, 23, 42, 0.9);
+		border: 1px solid rgba(45, 212, 191, 0.3);
+		border-radius: $space-xs;
+		color: var(--color-devengine-teal);
+		font-size: $text-sm;
+		cursor: pointer;
+		transition: all $transition-fast;
+		z-index: 1;
+
+		&:hover {
+			background-color: var(--color-devengine-teal);
+			color: var(--color-devengine-slate);
+			border-color: var(--color-devengine-teal);
+		}
+	}
+}
+
+// Inline Code
+code:not([class*="language-"]) {
+	background-color: rgba(45, 212, 191, 0.1);
+	color: var(--color-devengine-teal);
+	padding: 0.125em 0.25em;
+	border-radius: 0.25em;
+	font-size: 0.9em;
+}
+

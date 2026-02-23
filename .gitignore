@@ -1,0 +1,49 @@
+# Node.js / Build
+node_modules/
+dist/
+.vite/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# PHP / Composer
+vendor/
+# composer.lock - lock file omitted intentionally for theme distribution
+# Include composer.lock if building a plugin
+
+# WordPress
+wp-config.php
+wp-content/uploads/
+*.sql
+*.sql.gz
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE Files
+.idea/
+# .vscode/extensions.json and .vscode/settings.json may be committed for team standardization
+# Leave decision to developer
+.vscode/
+*.swp
+*.swo
+*~
+
+# Theme Specifics
+# screenshot.png - add real screenshot before submission, placeholder excluded
+*.zip
+.env
+.env.local
+.env.*.local
+
+# Keep empty directories
+# Add .gitkeep to: /dist/css/, /dist/js/, /languages/
+

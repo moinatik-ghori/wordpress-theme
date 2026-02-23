@@ -1,0 +1,74 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// CSS Grid Utility Classes
+
+.grid {
+	display: grid;
+	gap: $space-md;
+
+	@include respond-to('md') {
+		gap: $space-lg;
+	}
+}
+
+// Two Column Grid
+.grid--2col {
+	@extend .grid;
+	grid-template-columns: 1fr;
+
+	@include respond-to('md') {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+// Three Column Grid
+.grid--3col {
+	@extend .grid;
+	grid-template-columns: 1fr;
+
+	@include respond-to('md') {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include respond-to('lg') {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+// Bento Grid (Non-uniform layout)
+.grid--bento {
+	@extend .grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: minmax(200px, auto);
+
+	@include respond-to('md') {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas:
+			"large large medium small"
+			"large large medium small"
+			"wide wide wide small";
+
+		.grid-item--large {
+			grid-area: large;
+		}
+
+		.grid-item--medium {
+			grid-area: medium;
+		}
+
+		.grid-item--small {
+			grid-area: small;
+		}
+
+		.grid-item--wide {
+			grid-area: wide;
+		}
+	}
+}
+
+// Auto-fit Grid
+.grid--auto-fit {
+	@include grid-auto-fit(250px);
+}
+

@@ -1,0 +1,67 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+// Sticky Header with Backdrop Blur
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: $z-sticky;
+	background-color: rgba(15, 23, 42, 0.8);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	transition: background-color $transition-base, height $transition-base;
+
+	&.is-scrolled {
+		background-color: rgba(15, 23, 42, 0.95);
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.header-container {
+	@extend %container;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: $space-md;
+	padding-bottom: $space-md;
+	min-height: 70px;
+	transition: min-height $transition-base;
+
+	.is-scrolled & {
+		min-height: 60px;
+	}
+}
+
+.site-logo {
+	display: flex;
+	align-items: center;
+	font-size: $text-lg;
+	font-weight: 700;
+	color: var(--color-devengine-white);
+	text-decoration: none;
+	transition: transform $transition-fast;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+
+	img {
+		max-height: 40px;
+		width: auto;
+	}
+}
+
+.site-title {
+	margin: 0;
+	font-size: $text-lg;
+	font-weight: 700;
+}
+
+.site-description {
+	margin: 0;
+	font-size: $text-sm;
+	color: var(--color-devengine-muted);
+}
+

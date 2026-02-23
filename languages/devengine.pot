@@ -1,0 +1,362 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: DevEngine Premium 1.0.0\n"
+"Report-Msgid-Bugs-To: support@devengine.com\n"
+"POT-Creation-Date: 2024-01-15 12:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: devengine\n"
+
+#: header.php
+msgid "Skip to main content"
+msgstr ""
+
+#: header.php
+msgid "Toggle dark mode"
+msgstr ""
+
+#: header.php
+msgid "Open mobile menu"
+msgstr ""
+
+#: header.php
+msgid "Primary Navigation"
+msgstr ""
+
+#: header.php
+msgid "Mobile Navigation"
+msgstr ""
+
+#: footer.php
+msgid "Built with DevEngine Premium."
+msgstr ""
+
+#: footer.php
+msgid "Back to top"
+msgstr ""
+
+#: footer.php
+msgid "Footer Navigation"
+msgstr ""
+
+#: 404.php
+msgid "Page Not Found"
+msgstr ""
+
+#: 404.php
+msgid "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+msgstr ""
+
+#: 404.php
+msgid "Return Home"
+msgstr ""
+
+#: 404.php
+msgid "Recent Posts"
+msgstr ""
+
+#: 404.php
+msgid "Recent Projects"
+msgstr ""
+
+#: search.php
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php
+msgid "%d result found"
+msgid_plural "%d results found"
+msgstr[0] ""
+msgstr[1] ""
+
+#: single.php
+msgid "Pages:"
+msgstr ""
+
+#: single.php
+msgid "%d min read"
+msgid_plural "%d min read"
+msgstr[0] ""
+msgstr[1] ""
+
+#: single.php
+msgid "About the author"
+msgstr ""
+
+#: single.php
+msgid "View all posts"
+msgstr ""
+
+#: single.php
+msgid "Previous:"
+msgstr ""
+
+#: single.php
+msgid "Next:"
+msgstr ""
+
+#: inc/breadcrumbs.php
+msgid "Home"
+msgstr ""
+
+#: inc/breadcrumbs.php
+msgid "Blog"
+msgstr ""
+
+#: inc/breadcrumbs.php
+msgid "Category"
+msgstr ""
+
+#: inc/breadcrumbs.php
+msgid "Tag"
+msgstr ""
+
+#: inc/breadcrumbs.php
+msgid "Search Results for:"
+msgstr ""
+
+#: inc/breadcrumbs.php
+msgid "404 — Page Not Found"
+msgstr ""
+
+#: inc/breadcrumbs.php
+msgid "Projects"
+msgstr ""
+
+#: inc/breadcrumbs.php
+msgid "Snippets"
+msgstr ""
+
+#: inc/breadcrumbs.php
+msgid "Author"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Design System"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Customize the theme design system including colors, typography, and dark mode."
+msgstr ""
+
+#: inc/customizer.php
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Primary Accent (Teal)"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Background (Slate)"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Surface Color"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Body Text"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Muted Text"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Typography"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Body Font"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Heading Font"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Monospace Font"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Base Font Size (px)"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Dark Mode"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Default Color Scheme"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Show Dark Mode Toggle in Header"
+msgstr ""
+
+#: inc/customizer.php
+msgid "GitHub Integration"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Configure GitHub API integration for repository displays."
+msgstr ""
+
+#: inc/customizer.php
+msgid "GitHub Settings"
+msgstr ""
+
+#: inc/customizer.php
+msgid "GitHub Username"
+msgstr ""
+
+#: inc/customizer.php
+msgid "GitHub Personal Access Token (optional)"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Used to increase API rate limit to 5000 req/hr. Stored in database — use a read-only token."
+msgstr ""
+
+#: inc/customizer.php
+msgid "Number of Repos to Display"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Show Repository Topics as Tags"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Header & Navigation"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Customize header appearance and navigation settings."
+msgstr ""
+
+#: inc/customizer.php
+msgid "Header Settings"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Enable Sticky Header"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Enable Backdrop Blur on Scroll"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Logo Height (px)"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Header CTA Button Text"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Header CTA Button URL"
+msgstr ""
+
+#: inc/functions.php
+msgid "Blog Sidebar"
+msgstr ""
+
+#: inc/functions.php
+msgid "Add widgets here to appear in the blog sidebar."
+msgstr ""
+
+#: inc/functions.php
+msgid "Footer Widget Area"
+msgstr ""
+
+#: inc/functions.php
+msgid "Add widgets here to appear in the footer."
+msgstr ""
+
+#: inc/nav-walker.php
+msgid "Submenu"
+msgstr ""
+
+#: single-devengine_project.php
+msgid "Project Links"
+msgstr ""
+
+#: single-devengine_project.php
+msgid "View live demo of %s"
+msgstr ""
+
+#: single-devengine_project.php
+msgid "Live Demo"
+msgstr ""
+
+#: single-devengine_project.php
+msgid "View %s on GitHub"
+msgstr ""
+
+#: single-devengine_project.php
+msgid "GitHub"
+msgstr ""
+
+#: single-devengine_project.php
+msgid "Tech Stack"
+msgstr ""
+
+#: single-devengine_project.php
+msgid "Project Info"
+msgstr ""
+
+#: single-devengine_project.php
+msgid "Status:"
+msgstr ""
+
+#: single-devengine_project.php
+msgid "Last Updated:"
+msgstr ""
+
+#: single-devengine_project.php
+msgid "More Projects"
+msgstr ""
+
+#: single-devengine_project.php
+msgid "Project Details"
+msgstr ""
+
+#: index.php
+msgid "Previous page"
+msgstr ""
+
+#: index.php
+msgid "Next page"
+msgstr ""
+
+#: archive.php
+msgid "Previous page"
+msgstr ""
+
+#: archive.php
+msgid "Next page"
+msgstr ""
+
+#: search.php
+msgid "Previous page"
+msgstr ""
+
+#: search.php
+msgid "Next page"
+msgstr ""
+
+# NOTE: Run wp i18n make-pot . languages/devengine.pot --domain=devengine to regenerate this file after adding new strings
+

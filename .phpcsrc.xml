@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<ruleset name="DevEngine Premium">
+	<description>DevEngine Premium WordPress Theme Coding Standards</description>
+
+	<!-- Scan entire theme directory -->
+	<file>.</file>
+
+	<!-- Exclude patterns -->
+	<exclude-pattern>/vendor/</exclude-pattern>
+	<exclude-pattern>/node_modules/</exclude-pattern>
+	<exclude-pattern>/dist/</exclude-pattern>
+	<exclude-pattern>*.min.js</exclude-pattern>
+	<exclude-pattern>*.min.css</exclude-pattern>
+	<exclude-pattern>/assets/vendors/</exclude-pattern>
+
+	<!-- Arguments -->
+	<arg name="basepath" value="."/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+	<arg name="extensions" value="php"/>
+
+	<!-- Base WordPress ruleset -->
+	<rule ref="WordPress">
+		<rule ref="WordPress-Core"/>
+		<rule ref="WordPress-Docs"/>
+		<rule ref="WordPress-Extra"/>
+	</rule>
+
+	<!-- Configuration -->
+	<config name="minimum_supported_wp_version" value="6.5"/>
+	<config name="testVersion" value="8.1-"/>
+
+	<!-- Exclude rules that conflict with modern PHP 8.1 syntax -->
+	<rule ref="WordPress.PHP.DisallowShortTernary">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Universal.Arrays.DisallowShortArraySyntax">
+		<severity>0</severity>
+	</rule>
+
+	<!-- I18n text domain -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" value="devengine"/>
+		</properties>
+	</rule>
+
+	<!-- Global prefix -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array" value="devengine"/>
+		</properties>
+	</rule>
+</ruleset>
+

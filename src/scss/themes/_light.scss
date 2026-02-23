@@ -1,0 +1,35 @@
+// Light Theme Overrides
+// Applied when body has .theme-light class
+.theme-light {
+	--color-devengine-slate: #f8fafc;
+	--color-devengine-teal: #0d9488;
+	--color-devengine-white: #0f172a;
+	--color-devengine-muted: #475569;
+
+	// Override any additional light theme specific variables
+	--bg-primary: var(--color-devengine-slate);
+	--bg-secondary: rgba(248, 250, 252, 0.95);
+	--text-primary: var(--color-devengine-white);
+	--text-secondary: var(--color-devengine-muted);
+	--accent: var(--color-devengine-teal);
+	--border-color: rgba(15, 23, 42, 0.1);
+	--shadow-color: rgba(0, 0, 0, 0.1);
+
+	// Adjust component styles for light theme
+	.card {
+		background-color: var(--color-devengine-white);
+		color: var(--color-devengine-slate);
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+	}
+
+	.site-header {
+		background-color: rgba(248, 250, 252, 0.8);
+		border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+	}
+
+	.site-footer {
+		background-color: rgba(248, 250, 252, 0.95);
+		border-top: 1px solid rgba(15, 23, 42, 0.1);
+	}
+}
+

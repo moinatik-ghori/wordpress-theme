@@ -1,0 +1,167 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+// Navigation Component - BEM Methodology
+.nav {
+	display: flex;
+	align-items: center;
+
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: $space-lg;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&__item {
+		position: relative;
+	}
+
+	&__link {
+		display: block;
+		padding: $space-sm $space-md;
+		font-size: $text-sm;
+		font-weight: 500;
+		color: var(--color-devengine-white);
+		text-decoration: none;
+		position: relative;
+		transition: color $transition-fast;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 0;
+			height: 2px;
+			background-color: var(--color-devengine-teal);
+			transform: translateX(-50%);
+			transition: width $transition-base;
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--color-devengine-teal);
+
+			&::after {
+				width: calc(100% - #{$space-md * 2});
+			}
+		}
+
+		&.is-active {
+			color: var(--color-devengine-teal);
+
+			&::after {
+				width: calc(100% - #{$space-md * 2});
+			}
+		}
+	}
+
+	// Mobile Navigation Variant
+	&--mobile {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		width: 80%;
+		max-width: 400px;
+		height: 100vh;
+		background-color: var(--color-devengine-slate);
+		z-index: $z-modal;
+		padding: $space-2xl;
+		transition: right $transition-base;
+		overflow-y: auto;
+		box-shadow: -4px 0 6px -1px rgba(0, 0, 0, 0.3);
+
+		&.is-open {
+			right: 0;
+		}
+
+		.nav__list {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: $space-md;
+		}
+
+		.nav__link {
+			width: 100%;
+			padding: $space-md;
+			font-size: $text-base;
+
+			&::after {
+				left: $space-md;
+				transform: none;
+			}
+
+			&:hover::after,
+			&.is-active::after {
+				width: calc(100% - #{$space-md * 2});
+			}
+		}
+	}
+}
+
+// Mobile Menu Toggle Button
+.menu-toggle {
+	@extend %button-reset;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	width: 32px;
+	height: 32px;
+	padding: $space-xs;
+	z-index: calc($z-modal + 1);
+
+	@include respond-to('lg') {
+		display: none;
+	}
+
+	span {
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: var(--color-devengine-white);
+		transition: all $transition-base;
+		border-radius: 2px;
+	}
+
+	&.is-active {
+		span:nth-child(1) {
+			transform: rotate(45deg) translate(6px, 6px);
+		}
+
+		span:nth-child(2) {
+			opacity: 0;
+		}
+
+		span:nth-child(3) {
+			transform: rotate(-45deg) translate(6px, -6px);
+		}
+	}
+}
+
+// Mobile Menu Overlay
+.menu-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: calc($z-modal - 1);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity $transition-base, visibility $transition-base;
+
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@include respond-to('lg') {
+		display: none;
+	}
+}
+

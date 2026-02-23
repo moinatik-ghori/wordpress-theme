@@ -1,0 +1,61 @@
+@use 'variables' as *;
+
+// Responsive Breakpoint Mixin
+// Usage: @include respond-to('md') { ... }
+@mixin respond-to($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		$value: map-get($breakpoints, $breakpoint);
+		@media (min-width: $value) {
+			@content;
+		}
+	} @else {
+		@warn "Unknown breakpoint: #{$breakpoint}";
+	}
+}
+
+// Flex Center Utility
+// Centers content both horizontally and vertically
+@mixin flex-center() {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+// Grid Auto-Fit
+// Creates responsive grid with auto-fit columns
+// Usage: @include grid-auto-fit(250px);
+@mixin grid-auto-fit($min-size) {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax($min-size, 1fr));
+	gap: $space-md;
+}
+
+// Visually Hidden
+// Hides element visually but keeps it accessible to screen readers
+@mixin visually-hidden() {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+// Focus Ring
+// Teal outline for keyboard navigation
+@mixin focus-ring() {
+	outline: 2px solid $color-devengine-teal;
+	outline-offset: 2px;
+}
+
+// Reduced Motion
+// Wraps content to respect prefers-reduced-motion
+@mixin reduced-motion() {
+	@media (prefers-reduced-motion: reduce) {
+		@content;
+	}
+}
+

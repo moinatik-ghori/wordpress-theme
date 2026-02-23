@@ -1,0 +1,24 @@
+{
+  "name": "devengine/devengine-premium",
+  "description": "DevEngine Premium - A personal branding theme for Software Engineers",
+  "type": "wordpress-theme",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=8.1"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
+    "wp-coding-standards/wpcs": "^3.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "DevEngine\\": "inc/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}
+

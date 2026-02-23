@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "devengine/github-repo-card",
+	"version": "1.0.0",
+	"title": "GitHub Repo Card",
+	"category": "devengine",
+	"icon": "code-standards",
+	"description": "Displays a live GitHub repository card fetched via the GitHub API",
+	"keywords": ["github", "repo", "code"],
+	"textdomain": "devengine",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {
+		"username": {
+			"type": "string",
+			"default": ""
+		},
+		"repoName": {
+			"type": "string",
+			"default": ""
+		},
+		"showTopics": {
+			"type": "boolean",
+			"default": true
+		},
+		"showStats": {
+			"type": "boolean",
+			"default": true
+		},
+		"cacheData": {
+			"type": "object",
+			"default": {}
+		}
+	},
+	"editorScript": "file:./edit.js",
+	"editorStyle": "file:./style.scss",
+	"render": "file:./render.php",
+	"viewScript": "file:../../dist/js/github-api.js"
+}
+

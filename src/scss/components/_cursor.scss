@@ -1,0 +1,54 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Magnetic Dot Cursor
+// Hidden entirely on touch devices using media query
+@media (hover: hover) and (pointer: fine) {
+	.custom-cursor {
+		position: fixed;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background-color: var(--color-devengine-teal);
+		pointer-events: none;
+		z-index: $z-cursor;
+		mix-blend-mode: difference;
+		transform: translate(-50%, -50%);
+		transition: transform $transition-fast, width $transition-fast, height $transition-fast;
+		opacity: 0.8;
+
+		&.is-hovering {
+			width: 40px;
+			height: 40px;
+			background-color: rgba(45, 212, 191, 0.3);
+			border: 2px solid var(--color-devengine-teal);
+		}
+
+		&.is-clicking {
+			width: 15px;
+			height: 15px;
+		}
+	}
+
+	// Elements that trigger cursor scale on hover
+	a,
+	button,
+	.btn,
+	.card,
+	.nav__link {
+		&:hover {
+			~ .custom-cursor,
+			+ .custom-cursor {
+				transform: translate(-50%, -50%) scale(1.5);
+			}
+		}
+	}
+}
+
+// Hide cursor on touch devices
+@media (hover: none) {
+	.custom-cursor {
+		display: none !important;
+	}
+}
+

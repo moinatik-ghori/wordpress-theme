@@ -1,0 +1,105 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+// Card Component - BEM Methodology
+.card {
+	@extend %card-base;
+	display: flex;
+	flex-direction: column;
+	transition: transform $transition-base, box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-4px);
+	}
+
+	// Card Header
+	&__header {
+		margin-bottom: $space-md;
+		padding-bottom: $space-md;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	&__title {
+		font-size: $text-lg;
+		font-weight: 600;
+		margin: 0 0 $space-sm 0;
+		color: var(--color-devengine-white);
+	}
+
+	&__meta {
+		font-size: $text-sm;
+		color: var(--color-devengine-muted);
+		margin: 0;
+	}
+
+	// Card Body
+	&__body {
+		flex: 1;
+		margin-bottom: $space-md;
+		color: var(--color-devengine-muted);
+		line-height: 1.6;
+
+		p {
+			margin-bottom: $space-sm;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// Card Footer
+	&__footer {
+		margin-top: auto;
+		padding-top: $space-md;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: $space-md;
+	}
+
+	// GitHub Repo Card Variant
+	&--repo {
+		background: linear-gradient(135deg, rgba(45, 212, 191, 0.1) 0%, rgba(15, 23, 42, 0.9) 100%);
+		border: 1px solid rgba(45, 212, 191, 0.2);
+
+		.card__header {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			gap: $space-md;
+		}
+
+		.card__title {
+			color: var(--color-devengine-teal);
+		}
+
+		.repo-stats {
+			display: flex;
+			gap: $space-lg;
+			font-size: $text-sm;
+			color: var(--color-devengine-muted);
+
+			.stat-item {
+				display: flex;
+				align-items: center;
+				gap: $space-xs;
+
+				svg {
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+
+		.repo-topics {
+			display: flex;
+			flex-wrap: wrap;
+			gap: $space-xs;
+			margin-top: $space-sm;
+		}
+	}
+}
+

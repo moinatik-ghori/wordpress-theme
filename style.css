@@ -1,0 +1,57 @@
+/*
+Theme Name: DevEngine Premium
+Theme URI: https://devengine.com
+Author: DevEngine Team
+Author URI: https://devengine.com
+Description: A premium personal branding theme engineered for Software Engineers. Features GitHub integration, tech stack badges, and modern FSE architecture.
+Version: 1.0.0
+Requires at least: 6.5
+Tested up to: 6.5
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: devengine
+Tags: full-site-editing, block-theme, portfolio, blog, custom-colors, custom-menu, editor-style, featured-images, flexible-header, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-logo, custom-menu, editor-style, featured-images, flexible-header, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+
+DevEngine Premium WordPress Theme, (C) 2024 DevEngine
+DevEngine Premium is distributed under the terms of the GNU GPL
+*/
+
+:root {
+	/* Color Palette */
+	--color-devengine-slate: #0f172a;
+	--color-devengine-teal: #2dd4bf;
+	--color-devengine-white: #f8fafc;
+	--color-devengine-muted: #64748b;
+
+	/* Spacing Scale (base unit: 4px) */
+	--space-xs: 0.25rem;   /* 4px */
+	--space-sm: 0.5rem;    /* 8px */
+	--space-md: 1rem;      /* 16px */
+	--space-lg: 1.5rem;    /* 24px */
+	--space-xl: 2rem;      /* 32px */
+	--space-2xl: 3rem;     /* 48px */
+	--space-3xl: 4rem;     /* 64px */
+	--space-4xl: 6rem;     /* 96px */
+
+	/* Typography Scale (fluid clamp) */
+	--text-sm: clamp(0.875rem, 1.5vw, 1rem);
+	--text-base: clamp(1rem, 2vw, 1.125rem);
+	--text-lg: clamp(1.125rem, 2.5vw, 1.5rem);
+	--text-xl: clamp(1.5rem, 4vw, 2.25rem);
+	--text-2xl: clamp(2rem, 6vw, 3.5rem);
+
+	/* Z-Index Scale */
+	--z-base: 1;
+	--z-dropdown: 100;
+	--z-sticky: 200;
+	--z-overlay: 300;
+	--z-modal: 400;
+	--z-cursor: 500;
+
+	/* Transition Tokens */
+	--transition-fast: 150ms ease;
+	--transition-base: 300ms ease;
+	--transition-slow: 500ms ease;
+}
+

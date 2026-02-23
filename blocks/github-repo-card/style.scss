@@ -1,0 +1,181 @@
+@use '../../src/scss/abstracts/placeholders' as *;
+@use '../../src/scss/abstracts/variables' as *;
+@use '../../src/scss/abstracts/mixins' as *;
+
+// GitHub Repo Card Block Styles
+// Extends %card-base placeholder from abstracts
+
+.card--repo {
+	@extend %card-base;
+	background: linear-gradient(
+		135deg,
+		rgba(45, 212, 191, 0.1) 0%,
+		rgba(15, 23, 42, 0.9) 100%
+	);
+	border: 1px solid rgba(45, 212, 191, 0.2);
+	transition: transform $transition-base, box-shadow $transition-base;
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 16px -4px rgba(45, 212, 191, 0.3);
+	}
+
+	.card__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: $space-md;
+		margin-bottom: $space-md;
+		padding-bottom: $space-md;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.card__title {
+		font-size: $text-lg;
+		font-weight: 600;
+		margin: 0;
+		color: var(--color-devengine-teal);
+		flex: 1;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+			transition: color $transition-fast;
+
+			&:hover {
+				color: var(--color-devengine-white);
+			}
+		}
+	}
+
+	.card__body {
+		margin-bottom: $space-md;
+	}
+
+	.card__description {
+		color: var(--color-devengine-muted);
+		line-height: 1.6;
+		margin-bottom: $space-md;
+	}
+
+	.card__meta {
+		font-size: $text-sm;
+		color: var(--color-devengine-muted);
+		margin: 0;
+	}
+
+	.repo-topics {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $space-xs;
+		margin-top: $space-sm;
+	}
+
+	.repo-stats {
+		display: flex;
+		gap: $space-lg;
+		font-size: $text-sm;
+		color: var(--color-devengine-muted);
+
+		.stat-item {
+			display: flex;
+			align-items: center;
+			gap: $space-xs;
+		}
+	}
+
+	.card__footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: $space-md;
+		padding-top: $space-md;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		margin-top: auto;
+	}
+
+	// Error state
+	&.card--error {
+		background-color: rgba(239, 68, 68, 0.1);
+		border-color: rgba(239, 68, 68, 0.3);
+
+		p {
+			color: var(--color-devengine-white);
+			margin: 0;
+		}
+	}
+
+	// Placeholder state
+	&.card--placeholder {
+		opacity: 0.6;
+	}
+}
+
+// Language badge color map
+$language-colors: (
+	'javascript': (#f7df1e, #000),
+	'js': (#f7df1e, #000),
+	'typescript': (#3178c6, #fff),
+	'ts': (#3178c6, #fff),
+	'php': (#777bb4, #fff),
+	'python': (#3572a5, #fff),
+	'rust': (#dea584, #000),
+	'go': (#00add8, #fff),
+	'react': (#61dafb, #000),
+	'vue': (#4fc08d, #fff),
+	'node': (#339933, #fff),
+	'nodejs': (#339933, #fff),
+);
+
+@each $language, $colors in $language-colors {
+	$bg-color: nth($colors, 1);
+	$text-color: nth($colors, 2);
+
+	.badge--#{$language} {
+		background-color: $bg-color;
+		color: $text-color;
+	}
+}
+
+// Skeleton loading state
+@keyframes shimmer {
+	0% {
+		background-position: -1000px 0;
+	}
+	100% {
+		background-position: 1000px 0;
+	}
+}
+
+.loading-spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: $space-4xl;
+}
+
+.card--repo-skeleton {
+	@extend %card-base;
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0.05) 0%,
+		rgba(255, 255, 255, 0.1) 50%,
+		rgba(255, 255, 255, 0.05) 100%
+	);
+	background-size: 2000px 100%;
+	animation: shimmer 2s infinite linear;
+
+	@include reduced-motion() {
+		animation: none;
+	}
+}
+
+// Respect reduced motion
+@include reduced-motion() {
+	.card--repo {
+		&:hover {
+			transform: none;
+		}
+	}
+}
+

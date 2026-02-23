@@ -1,0 +1,56 @@
+// SCSS Variables - Mirror CSS Custom Properties
+// These variables are used for calculations and maps
+
+// Color Palette
+$color-devengine-slate: #0f172a;
+$color-devengine-teal: #2dd4bf;
+$color-devengine-white: #f8fafc;
+$color-devengine-muted: #64748b;
+
+// Spacing Scale (base unit: 4px)
+$space-xs: 0.25rem;   // 4px
+$space-sm: 0.5rem;    // 8px
+$space-md: 1rem;      // 16px
+$space-lg: 1.5rem;    // 24px
+$space-xl: 2rem;      // 32px
+$space-2xl: 3rem;     // 48px
+$space-3xl: 4rem;     // 64px
+$space-4xl: 6rem;     // 96px
+
+// Typography Scale (fluid clamp)
+$text-sm: clamp(0.875rem, 1.5vw, 1rem);
+$text-base: clamp(1rem, 2vw, 1.125rem);
+$text-lg: clamp(1.125rem, 2.5vw, 1.5rem);
+$text-xl: clamp(1.5rem, 4vw, 2.25rem);
+$text-2xl: clamp(2rem, 6vw, 3.5rem);
+
+// Z-Index Scale
+$z-base: 1;
+$z-dropdown: 100;
+$z-sticky: 200;
+$z-overlay: 300;
+$z-modal: 400;
+$z-cursor: 500;
+
+// Transition Tokens
+$transition-fast: 150ms ease;
+$transition-base: 300ms ease;
+$transition-slow: 500ms ease;
+
+// Breakpoints Map
+// sm=640px, md=768px, lg=1024px, xl=1280px, 2xl=1536px
+$breakpoints: (
+	'sm': 640px,
+	'md': 768px,
+	'lg': 1024px,
+	'xl': 1280px,
+	'2xl': 1536px
+);
+
+// Font Families
+$font-inter: 'Inter', system-ui, sans-serif;
+
+// Layout Sizes
+$content-size: 720px;
+$wide-size: 1200px;
+

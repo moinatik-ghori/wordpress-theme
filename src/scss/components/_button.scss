@@ -1,0 +1,88 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+// Button Component - BEM Methodology
+.btn {
+	@extend %button-reset;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: $space-sm;
+	padding: $space-sm $space-lg;
+	font-size: $text-sm;
+	font-weight: 600;
+	border-radius: $space-sm;
+	transition: all $transition-base;
+	cursor: pointer;
+	text-align: center;
+	white-space: nowrap;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+
+	&:focus-visible {
+		@include focus-ring();
+	}
+
+	// Primary Button Variant
+	&--primary {
+		background-color: var(--color-devengine-teal);
+		color: var(--color-devengine-slate);
+
+		&:hover {
+			background-color: lighten($color-devengine-teal, 10%);
+		}
+
+		&:active {
+			background-color: darken($color-devengine-teal, 5%);
+		}
+	}
+
+	// Ghost Button Variant
+	&--ghost {
+		background-color: transparent;
+		color: var(--color-devengine-white);
+		border: 2px solid var(--color-devengine-white);
+
+		&:hover {
+			background-color: var(--color-devengine-white);
+			color: var(--color-devengine-slate);
+		}
+	}
+
+	// Icon Button Variant
+	&--icon {
+		padding: $space-sm;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		background-color: rgba(255, 255, 255, 0.1);
+		color: var(--color-devengine-white);
+
+		&:hover {
+			background-color: var(--color-devengine-teal);
+			color: var(--color-devengine-slate);
+		}
+
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	// Disabled State
+	&:disabled,
+	&[disabled] {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+}
+

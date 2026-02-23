@@ -1,0 +1,76 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Badge Component - BEM Methodology
+.badge {
+	display: inline-flex;
+	align-items: center;
+	padding: $space-xs $space-sm;
+	font-size: $text-sm;
+	font-weight: 600;
+	border-radius: $space-sm;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: var(--color-devengine-white);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+
+	// Tech Badge Variant
+	&--tech {
+		padding: $space-sm $space-md;
+		border-radius: $space-md;
+	}
+
+	// Language-Specific Color Variants
+	&--javascript,
+	&--js {
+		background-color: #f7df1e;
+		color: #000;
+	}
+
+	&--typescript,
+	&--ts {
+		background-color: #3178c6;
+		color: #fff;
+	}
+
+	&--php {
+		background-color: #777bb4;
+		color: #fff;
+	}
+
+	&--python {
+		background-color: #3776ab;
+		color: #fff;
+	}
+
+	&--rust {
+		background-color: #000000;
+		color: #fff;
+	}
+
+	&--go {
+		background-color: #00add8;
+		color: #fff;
+	}
+
+	&--react {
+		background-color: #61dafb;
+		color: #000;
+	}
+
+	&--vue {
+		background-color: #4fc08d;
+		color: #fff;
+	}
+
+	&--node {
+		background-color: #339933;
+		color: #fff;
+	}
+
+	&--wordpress {
+		background-color: #21759b;
+		color: #fff;
+	}
+}
+

@@ -1,0 +1,17 @@
+// Rem Converter
+// Converts px to rem (assumes 16px base)
+// Usage: font-size: rem(24);
+@function rem($px) {
+	@return ($px / 16) * 1rem;
+}
+
+// Clamp Size Helper
+// Creates fluid type clamp() with viewport units
+// Usage: font-size: clamp-size(16px, 24px);
+@function clamp-size($min, $max) {
+	$min-rem: ($min / 16) * 1rem;
+	$max-rem: ($max / 16) * 1rem;
+	$min-vw: ($min / 16) * 1vw;
+	@return clamp(#{$min-rem}, #{$min-vw}, #{$max-rem});
+}
+
